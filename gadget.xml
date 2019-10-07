@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+  <name>TODO List</name>
+  <version>1.0.0.0</version>
+  <author name="Ryu In Seong">
+    <logo src="./images/logo.png" />
+  </author>
+  <description>TO-DO List</description>
+  <icons>
+    <icon height="100" width="100" src="images\logo.png" />
+  </icons>
+  <hosts>
+    <host name="sidebar">
+      <base type="HTML" apiVersion="1.0.0" src="HelloWorld.html" />
+      <permissions>Full</permissions>
+      <platform minPlatformVersion="1.0" />
+      <defaultImage src="images\logo.png" />
+    </host>
+  </hosts>
+</gadget>
