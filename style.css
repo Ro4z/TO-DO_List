@@ -58,3 +58,15 @@ ul li span {
   text-decoration: line-through;
   color: red;
 }
+
+.fa-minus {
+  float: right;
+  padding: 5px;
+  color: #f2143f;
+  /* visibility: hidden; */
+}
+
+.fa-pencil {
+  float: right;
+  padding: 5px;
+}
