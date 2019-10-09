@@ -36,12 +36,20 @@ window.addEventListener(
 //   }
 // };
 
-//done list로 옮기기
+//done list <-> todo list
 var donelist = document.getElementById("donelist");
 function moveItem() {
+  //this === span
   var listItemId = this.id.replace("li_", "");
   var listItem = document.getElementById("li_" + listItemId);
-  donelist.appendChild(listItem);
+  var listItemParentId = listItem.parentElement;
+
+  console.log(listItemParentId);
+  if (listItemParentId == donelist) {
+    todolist.appendChild(listItem);
+  } else {
+    donelist.appendChild(listItem);
+  }
 }
 
 //list 이름 변경
