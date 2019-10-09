@@ -11,7 +11,7 @@
   </icons>
   <hosts>
     <host name="sidebar">
-      <base type="HTML" apiVersion="1.0.0" src="TODO_List.html" />
+      <base type="HTML" apiVersion="1.0.0" src="HelloWorld.html" />
       <permissions>Full</permissions>
       <platform minPlatformVersion="1.0" />
       <defaultImage src="images\logo.png" />
