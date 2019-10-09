@@ -65,8 +65,9 @@ function renameItem() {
 }
 
 //list 삭제
-function removeItem() {
-  var listItemId = this.id.replace("li_", "");
+function deleteItem() {
+  //this === minusIcon
+  var listItemId = this.id.replace("minusIcon_", "");
   document.getElementById("li_" + listItemId).style.display = "none";
 }
 
@@ -113,6 +114,13 @@ function addNewItem(list, itemText) {
   pencilIcon.className = "fa fa-pencil";
   pencilIcon.onclick = renameItem;
   listItem.appendChild(pencilIcon);
+
+  //삭제하는 버튼
+  var minusIcon = document.createElement("i");
+  minusIcon.className = "fa fa-minus";
+  minusIcon.id = "minusIcon_" + id;
+  minusIcon.onclick = deleteItem;
+  listItem.appendChild(minusIcon);
 
   var checkBox = document.createElement("input");
   checkBox.type = "checkbox";
