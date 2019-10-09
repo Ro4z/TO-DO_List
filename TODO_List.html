@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Unicode" />
+    <title>Hello World</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body onload="init()">
+    <div class="container">
+      <div class="row">
+        <a href = "todolist.html"><h1 id="todolistHeader">To do List</h1></a>
+      </div>
+
+      <div class="row">
+        <div class ="col-sm-6">
+          <hr>
+          <p id="enter">Write what to do and Press Button!</p>
+
+          <p class="inputarea">
+            <input type="text" id="inputText" placeholder="what to do">
+            <ul id="todolist"></ul>
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <hr>
+          <p id="enter">Done</p>
+
+
+          <ul id = "donelist"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="scirpt.js"></script>
+  </body>
+</html>
