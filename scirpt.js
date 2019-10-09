@@ -40,16 +40,20 @@ window.addEventListener(
 var donelist = document.getElementById("donelist");
 function moveItem() {
   var listItemId = this.id.replace("li_", "");
-  var listItem = document.getElementById("li" + listItemId);
+  var listItem = document.getElementById("li_" + listItemId);
   donelist.appendChild(listItem);
 }
+
 //list 이름 변경
 function renameItem() {
-  //this == span
+  //this == pencilIcon
   var newText = prompt("what should this item be renamed to?");
   if (!newText || newText === "" || newText === " ") return false;
 
-  this.innerText = newText;
+  var spanId = this.id.replace("pencilicon", "");
+  var span = document.getElementById("Item" + spanId);
+
+  span.innerText = newText;
 }
 
 //list 삭제
@@ -94,7 +98,13 @@ function addNewItem(list, itemText) {
 
   var listItem = document.createElement("li");
   listItem.id = "li_" + id;
-  listItem.ondblclick = removeItem;
+  listItem.ondblclick = moveItem;
+
+  //수정하는 버튼
+  var pencilIcon = document.createElement("i");
+  pencilIcon.className = "fa fa-pencil";
+  pencilIcon.onclick = renameItem;
+  listItem.appendChild(pencilIcon);
 
   var checkBox = document.createElement("input");
   checkBox.type = "checkbox";
@@ -104,7 +114,6 @@ function addNewItem(list, itemText) {
   var span = document.createElement("span");
   span.id = "item_" + id;
   span.innerText = itemText;
-  span.onclick = renameItem;
 
   listItem.appendChild(checkBox);
   listItem.appendChild(span);
