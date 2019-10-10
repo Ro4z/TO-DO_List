@@ -95,6 +95,28 @@ newBtn.onclick = function() {
   addNewItem(document.getElementById("todolist"), itemText);
 };
 
+//마우스 올렸을 때 나타나기
+function mouseover() {
+  //this === li
+  var getId = this.id.replace("li_", "");
+  var pencilIcon = document.getElementById("pencilIcon_" + getId);
+  var minusIcon = document.getElementById("minusIcon_" + getId);
+
+  pencilIcon.style.visibility = "visible";
+  minusIcon.style.visibility = "visible";
+}
+
+//마우스 안 올렸을 때 사라지기
+function mouseout() {
+  //this === li
+  var getId = this.id.replace("li_", "");
+  var pencilIcon = document.getElementById("pencilIcon_" + getId);
+  var minusIcon = document.getElementById("minusIcon_" + getId);
+
+  pencilIcon.style.visibility = "hidden";
+  minusIcon.style.visibility = "hidden";
+}
+
 //add new item
 function addNewItem(list, itemText) {
   var date = new Date();
@@ -108,10 +130,13 @@ function addNewItem(list, itemText) {
   var listItem = document.createElement("li");
   listItem.id = "li_" + id;
   listItem.ondblclick = moveItem;
+  listItem.addEventListener("mouseover", mouseover);
+  listItem.addEventListener("mouseout", mouseout);
 
   //수정하는 버튼
   var pencilIcon = document.createElement("i");
   pencilIcon.className = "fa fa-pencil";
+  pencilIcon.id = "pencilIcon_" + id;
   pencilIcon.onclick = renameItem;
   listItem.appendChild(pencilIcon);
 
